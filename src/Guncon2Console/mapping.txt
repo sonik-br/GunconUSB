@@ -1,0 +1,13 @@
+﻿#guncon buttons and trigger mapping
+#format is [device].[command]=[guncommand]
+#device can be KEYBOARD or MOUSE
+#keyboard command must be the key byte code
+#mouse command can be Left, Right, Middle
+#guncommand can be Trigger, A1, A2, B1, B2, C1, C2, AClick, BClick
+#values are CASE SENSITIVE
+
+KEYBOARD.30=B1
+KEYBOARD.34=B2
+MOUSE.Left=Trigger
+MOUSE.Right=C1
+MOUSE.Middle=C2
