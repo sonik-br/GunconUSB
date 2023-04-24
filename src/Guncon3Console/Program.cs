@@ -173,6 +173,7 @@ namespace Guncon3Console
                 if (!Calibration.k_coefs_seted)
                 {
                     Console.WriteLine("Impossible to use without calibration.");
+                    hasError = true;
                     return;
                 }
 

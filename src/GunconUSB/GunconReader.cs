@@ -55,7 +55,7 @@ namespace GunconUSB
             if (_workerThread != null)
                 return;
 
-            vjoyFeeder.initVjoyInterface();
+            //vjoyFeeder.initVjoyInterface();
 
             try
             {
@@ -66,8 +66,11 @@ namespace GunconUSB
                     throw new Exception("Can't find guncon2 device.");
 
                 device = new USBDevice(deviceInfo);
-
+                
+                // x, x, y, y, ?, mode
                 byte[] command = new byte[] { 0, 0, 0, 0, 0, 1 };
+                //byte[] command = new byte[] { 0x14, 0, 0, 0, 0, 1 };
+
                 device.ControlOut(0x21, 0x09, 0x200, 0, command);
 
                 //if (initVjoyInterface())//try to initialize vjoy
@@ -127,7 +130,7 @@ namespace GunconUSB
             {
                 read();
 
-                vjoyFeeder.Feed(true);
+                //vjoyFeeder.Feed(true);
 
                 //if (rbMoveMouse.Checked)
                 //{
@@ -198,7 +201,7 @@ namespace GunconUSB
 
             int len = iface.InPipe.Read(data);
 
-            Console.WriteLine(string.Join(", ", data));
+            //Console.WriteLine(string.Join(", ", data));
 
             //PrintHex(data, len);
 
@@ -259,8 +262,9 @@ namespace GunconUSB
             GunState.PointerX = (int)gunX;
             GunState.PointerY = (int)gunY;
 
-            System.Diagnostics.Debug.WriteLine($"{data[2]} {data[3]}");
-            System.Diagnostics.Debug.WriteLine("--------------------");
+            System.Diagnostics.Debug.WriteLine($"{data[4]}\t{data[5]}");
+            //System.Diagnostics.Debug.WriteLine($"{data[2]} {data[3]}");
+            //System.Diagnostics.Debug.WriteLine("--------------------");
 
             //if (true)//tentative to fix rolling x problem
             //{

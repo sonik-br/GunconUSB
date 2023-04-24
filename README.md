@@ -11,6 +11,8 @@ App requires TetherScript's [HID Virtual Driver Kit](https://tetherscript.com/hi
 
 This project would not be possible without the reverse engineering and documentation of the guncon 2 and guncon 3 by beardypig:
 
+Driver and app for X64 only.
+
 * [Linux kernel driver for the Guncon 2](https://github.com/beardypig/guncon2/)
 * [Linux kernel driver for the Guncon 3](https://github.com/beardypig/guncon3)
 
